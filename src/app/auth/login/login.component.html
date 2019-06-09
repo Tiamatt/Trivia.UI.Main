@@ -1,0 +1,61 @@
+<!-- <p>Login</p>
+<a class="nav-link" routerLink="/auth/signup">Signup</a>
+<a class="nav-link" routerLink="/main">Home</a>         kali!!! -->
+
+<form [formGroup]="fg_login" (ngSubmit)="onLoginViaEmail()" class="c-form">
+    <div class="container">
+
+        <!-- via Facebook-->
+        <button type="button" class="btn bg-facebook-c shadow w-100 mb-3" (click)="onLoginViaFacebook()">
+            <i class="fab fa-facebook-f mr-2"></i>
+            <span>Login via Facebook</span>
+        </button>
+
+        <!-- via Google+ -->
+        <button type="button" class="btn bg-google-plus-c shadow w-100 mb-3" (click)="onLoginViaGoogle()">
+            <i class="fab fa-google mr-2"></i>
+            <span>Login via Google+</span>
+        </button>
+
+        <!-- via Instagram-->
+        <button type="button" class="btn bg-instagram-c shadow w-100 mb-3" (click)="onLoginViaInstagram()">
+            <i class="fab fa-instagram mr-2"></i>
+            <span>Login via Instargram</span>
+        </button>
+
+        <!-- OR divider -->
+        <hr class="hr-text mb-3" data-content="OR">
+
+        <!-- email -->
+        <div class="input-group mb-3 shadow">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-at"></i>
+                </span>
+            </div>
+            <input type="email" formControlName="fc_email" class="form-control" placeholder="Email" aria-label="Email">
+        </div>
+
+        <!-- password -->
+        <div class="input-group mb-3 shadow">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                        <i class="fas fa-key"></i>
+                </span>
+            </div>
+            <input type="password" formControlName="fc_password" class="form-control" placeholder="Password" aria-label="Password">
+        </div>
+
+        <!-- login -->
+        <button type="submit" class="btn btn-success shadow text-light w-100 mb-3" (click)="onLoginViaEmail()">
+            Login
+        </button>
+
+        <!-- Links -->
+        <div class="mb-3">
+            <a class="link-c float-left text-light" routerLink="/auth/reset-password">Forget password?</a>
+            <a class="link-c float-right text-light" routerLink="/auth/signup">Sign Up</a>
+        </div>
+
+    </div>
+</form>

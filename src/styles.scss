@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* import boostrap customization file */
+@import "./app/shared/styles/custom-bootstrap.scss"; 
+@import "~bootstrap/scss/bootstrap";
+
+/* colors for brands */
+$color-facebook: rgb(59, 89, 152);
+$color-google-plus: rgb(211, 72, 54);
+$color-instagram: rgba(59, 89, 152, 0.2);
+
+/* font-family */
+$font-family:  'Source Sans Pro', sans-serif;
+
+html,body {
+    background: $dark;
+    font-family: $font-family;
+    /* ---  FULL HEIGHT OF THE PAGE --- */
+    margin:0;
+    padding:0;
+    height:100%; /* needed for container min-height */
+    color: $light;
+}
+
+/*
+FOR <hr class="hr-text" data-content="OR">
+*/
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .9;
+    margin: 0;
+    &:before {
+      content: '';
+      // use the linear-gradient for the fading effect
+      // use a solid background color for a solid bar
+      background: linear-gradient(to right, transparent, $light, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+    &:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+  
+      padding: 0 .5em;
+      line-height: 1.5em;
+      // this is really the only tricky part, you need to specify the background color of the container element...
+      color: $light;
+      background-color:  $dark;
+    }
+  }
+
+.bg-facebook-c{
+    background-color: $light;
+    color: $dark;
+    // background-color: $color-facebook;
+    // color: $light;
+}
+
+.bg-instagram-c{
+    background-color: $light;
+    color: $dark;
+    // background-color: $color-instagram;
+    // color: $light;
+}
+
+.bg-google-plus-c{
+    background-color: $light;
+    color: $dark;
+    // background-color: $color-google-plus;
+    // color: $light;
+}
